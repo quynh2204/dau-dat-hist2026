@@ -1,0 +1,23 @@
+{
+  "batch": "001",
+  "status": { "vi": "Đặt trước · ra lò 12/2026", "en": "Pre-order · out of the kiln 12/2026" },
+  "place": { "vi": "Làng gốm Bàu Trúc, Phước Dân", "en": "Bàu Trúc pottery village, Phước Dân" },
+  "firing": { "vi": "Nung lộ thiên bằng rơm và củi", "en": "Open-air firing with straw and wood" },
+  "sample": true,
+  "pieces": { "ganh": 12, "nan": 12, "vuot": 12, "doi": 12, "nung": 12, "day": 12, "hiem": 3 },
+  "maker": { "ganh": "A", "nan": "A", "vuot": "B", "doi": "B", "nung": "C", "day": "C", "hiem": "A" },
+  "artisans": {
+    "A": { "name": { "vi": "Nghệ nhân A", "en": "Artisan A" }, "line": { "vi": "Học nghề từ mẹ, nặn đi vòng quanh bệ không dùng bàn xoay.", "en": "Learned from her mother; shapes clay by walking around the stand, no wheel." } },
+    "B": { "name": { "vi": "Nghệ nhân B", "en": "Artisan B" }, "line": { "vi": "Phụ trách vuốt láng và khắc hoa văn bằng vỏ sò.", "en": "Polishes and incises patterns with a seashell." } },
+    "C": { "name": { "vi": "Nghệ nhân C", "en": "Artisan C" }, "line": { "vi": "Giữ lửa rơm trong mỗi mẻ nung lộ thiên.", "en": "Tends the straw fire in every open-air firing." } }
+  },
+  "story": {
+    "ganh": { "vi": "Người Chăm lấy đất sét ven sông Quao, gánh về làng, nhặt sạn rồi trộn cát.", "en": "Clay is dug by the Quao river, carried home, cleaned and mixed with sand." },
+    "nan": { "vi": "Không bàn xoay: người thợ đi lùi quanh bệ để nặn nên dáng tròn.", "en": "No wheel: the potter walks backwards around the stand to raise the form." },
+    "vuot": { "vi": "Vỏ sò và vải ướt làm láng mặt gốm, rồi khắc hoa văn.", "en": "A seashell and wet cloth smooth the surface before patterns are incised." },
+    "doi": { "vi": "Gốm mộc được đội trên đầu mang ra phơi nắng gió.", "en": "Unfired pots are carried on the head to dry in sun and wind." },
+    "nung": { "vi": "Nung lộ thiên bằng rơm, củi; lửa để lại vân khói riêng trên từng món.", "en": "Open-air firing with straw and wood leaves unique smoke marks on each piece." },
+    "day": { "vi": "Nghề được truyền từ mẹ sang con gái qua nhiều thế hệ.", "en": "The craft passes from mother to daughter, generation after generation." },
+    "hiem": { "vi": "Mẹ và con gái cùng nâng một chiếc lu: nghề còn vì có người nối.", "en": "Mother and daughter lift one jar together: the craft lives because someone carries it on." }
+  }
+}
