@@ -42,3 +42,8 @@
 .embed .cp-main{padding:10px 10px 16px;gap:10px}
 .embed .cp-hero{padding:16px 14px 18px}
 @media (max-width:380px){.cp-unique,.cp-maker{grid-template-columns:72px 1fr;gap:12px}.cp-smoke svg,.cp-portrait{width:72px;height:72px}.cp-portrait{font-size:28px}.cp-block{padding:14px}.cp-slots{gap:4px}}
+.embed .cp-unique,.embed .cp-maker{grid-template-columns:60px 1fr;gap:10px}
+.embed .cp-smoke svg,.embed .cp-portrait{width:60px;height:60px}
+.embed .cp-portrait{font-size:24px}
+.embed .cp-code{font-size:13px !important;word-break:normal;white-space:nowrap}
+.embed .cp-block{padding:12px}
