@@ -218,3 +218,48 @@ p{margin:0 0 1em}
   .reveal{opacity:1;transform:none}
   .scroll-hint span{animation:none}
 }
+
+/* ---------- Dữ liệu thị trường ---------- */
+.trend{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px 20px 14px;margin-top:16px}
+.trend-head{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-bottom:10px;font-size:15px}
+.live{display:inline-flex;align-items:center;gap:6px;background:#FBE3DA;color:var(--clay-d);font-weight:800;font-size:12px;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:3px 10px}
+.live i{width:8px;height:8px;border-radius:50%;background:#D9452B;animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(217,69,43,.55)}70%{box-shadow:0 0 0 8px rgba(217,69,43,0)}100%{box-shadow:0 0 0 0 rgba(217,69,43,0)}}
+.trend-body{min-height:300px;border-radius:10px;overflow:hidden;background:#fff}
+.trend-body iframe{width:100% !important;display:block}
+.trend-fallback{padding:24px;margin:0;color:var(--muted);font-size:15px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}
+.kpi{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:20px;display:flex;flex-direction:column;gap:8px}
+.kpi b{font-size:clamp(22px,2.4vw,30px);line-height:1.1;font-weight:800;color:var(--clay)}
+.kpi span{font-size:14px;color:var(--ink-2);flex:1}
+.kpi em{font-style:normal;font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:8px}
+.kpi.hl{background:var(--ink);border-color:var(--ink)}
+.kpi.hl b{color:var(--gold)}
+.kpi.hl span{color:#E6DACB}
+.kpi.hl em{color:#A8998A;border-color:#4A3F37}
+.takeaway{margin-top:20px;background:#EADFD2;border-left:4px solid var(--clay);border-radius:0 12px 12px 0;padding:16px 20px;font-size:16px}
+
+/* ---------- 3D: ghi nguồn ảnh ---------- */
+.vase-credit{font-size:11px;color:#9C8E80;margin:0}
+.vase-credit a{color:#C9BBA9}
+
+/* ---------- Thẻ sau khi đào ---------- */
+.mini-card{display:flex;gap:14px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:12px;margin:4px 0 16px;max-width:440px;box-shadow:0 14px 30px -18px rgba(42,33,27,.5)}
+.mini-card[hidden]{display:none}
+.mc-qr{flex:0 0 96px;width:96px;height:96px;background:#fff;border-radius:8px;padding:4px}
+.mc-qr svg{width:100%;height:100%;display:block}
+.mc-body{display:flex;flex-direction:column;gap:4px;min-width:0}
+.mc-eyebrow{margin:0;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--clay-d)}
+.mc-body b{font-size:17px}
+.mc-body span{font-size:13px;color:var(--muted);font-family:ui-monospace,Menlo,Consolas,monospace;word-break:break-all}
+.mc-body .btn{align-self:flex-start;margin-top:4px}
+
+/* ---------- Trang thẻ trong khung điện thoại ---------- */
+.phone-screen.frame{padding:0;overflow:hidden;min-height:0;height:600px;background:var(--night)}
+.phone-screen.frame iframe{width:100%;height:100%;border:0;display:block}
+.feat{list-style:none;padding:0;margin:0 0 16px;display:grid;gap:10px}
+.feat li{background:var(--paper);border-radius:12px;padding:12px 16px;font-size:15px}
+.feat b{color:var(--clay-d)}
+
+@media (max-width:1000px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.kpis{grid-template-columns:1fr}.mc-qr{flex-basis:80px;width:80px;height:80px}.phone-screen.frame{height:560px}}
