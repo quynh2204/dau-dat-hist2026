@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dấu Đất – Tay Mẹ · Gốm Chăm Bàu Trúc cho thế hệ mới</title>
+<meta name="description" content="Dấu Đất đưa gốm Chăm Bàu Trúc – di sản UNESCO cần bảo vệ khẩn cấp – đến người trẻ và du khách bằng bộ sưu tập nhân vật Mẹ Làng, Hộp Đào Đất và hệ sinh thái collab tại TP.HCM. Dự án dự thi HIST 2026.">
+<meta property="og:title" content="Dấu Đất – Tay Mẹ">
+<meta property="og:description" content="Gốm Chăm Bàu Trúc cho thế hệ mới: nhân vật Mẹ Làng, Hộp Đào Đất, mô hình đa tầng. Dự án HIST 2026.">
+<meta name="theme-color" content="#2A211B">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script type="importmap">
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }
+</script>
+</head>
+<body>
+<header class="nav">
+  <a class="brand" href="#top" aria-label="Dấu Đất, về đầu trang">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M14,34 C6,30 6,18 14,13 L15,7 L25,7 L26,13 C34,18 34,30 26,34 Z" fill="#B5562F" stroke="#F4EFE8" stroke-width="2"/></svg>
+    <span>Dấu Đất</span>
+  </a>
+  <nav aria-label="Mục lục">
+    <a href="#van-de">Vấn đề</a>
+    <a href="#tay-me">Tay Mẹ</a>
+    <a href="#con-sot">Cơn sốt</a>
+    <a href="#me-lang">Mẹ Làng</a>
+    <a href="#dao-dat">Đào thử</a>
+    <a href="#mo-hinh">Mô hình</a>
+    <a href="#lo-trinh">Lộ trình</a>
+  </nav>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero" aria-labelledby="hero-title">
+    <canvas id="smoke" aria-hidden="true"></canvas>
+    <div class="hero-copy">
+      <p class="eyebrow">HIST 2026 · Du lịch Văn hoá &amp; Sáng tạo</p>
+      <h1 id="hero-title"><span class="line">Đôi tay mẹ</span><span class="line">nặn nên đất</span><span class="line accent">Chăm.</span></h1>
+      <p class="lead">Dấu Đất đưa gốm Bàu Trúc – di sản UNESCO cần bảo vệ khẩn cấp – đến người trẻ và du khách bằng một bộ sưu tập để mở, để sưu tầm và để tặng.</p>
+      <div class="cta">
+        <a class="btn primary" href="#dao-dat">Đào thử một hộp</a>
+        <a class="btn ghost" href="#mo-hinh">Xem mô hình đa tầng</a>
+      </div>
+    </div>
+    <div class="hero-stage">
+      <div id="vase3d" role="img" aria-label="Mô hình 3D chiếc lu gốm Bàu Trúc đang xoay"></div>
+      <div class="gesture">
+        <button id="gestureBtn" class="chip" type="button">Bật camera: xoè tay để xoay bình, nắm tay để nung</button>
+        <p id="gestureStatus" class="gesture-status" aria-live="polite">Kéo chuột hoặc vuốt để xoay. Camera chỉ xử lý trên máy bạn.</p>
+        <video id="cam" playsinline muted aria-hidden="true"></video>
+      </div>
+    </div>
+    <a class="scroll-hint" href="#van-de" aria-label="Cuộn xuống phần Vấn đề"><span></span></a>
+  </section>
+
+  <!-- PROBLEM -->
+  <section id="van-de" class="section problem" aria-labelledby="pb-title">
+    <div class="wrap">
+      <p class="eyebrow">01 · Vấn đề</p>
+      <h2 id="pb-title" class="reveal">Gốm Bàu Trúc đã đa dạng, đã lên sàn.<br>Nhưng chưa được dùng rộng rãi và chưa được tin chọn.</h2>
+      <div class="stats">
+        <div class="stat reveal"><b data-count="360" data-from="455">455</b><span>người còn làm nghề năm 2024, từ 455 người năm 2019</span></div>
+        <div class="stat reveal"><b data-count="6">0</b><span>người đủ khả năng truyền dạy</span></div>
+        <div class="stat reveal"><b data-count="17000" data-suffix="+">0</b><span>lượt khách đến làng năm 2025, nhưng phần lớn ghé ngắn, mua ít</span></div>
+        <div class="stat reveal"><b data-count="151">0</b><span>thợ gốm, 2 hợp tác xã, hơn 100 cơ sở và hộ kinh doanh</span></div>
+      </div>
+      <p class="src">Nguồn: TTXVN/VietnamPlus, 20/10/2026.</p>
+
+      <div class="market reveal">
+        <h3>Khảo sát gian hàng "gốm Bàu Trúc" trên TikTok Shop, 05/11/2026</h3>
+        <p>Có đủ loại: bình, bát, chén đổ bánh, nồi, bếp xông, lò nướng, chậu cây, đế nến, tượng. Nhưng lượt mua dồn vào vài món rẻ, dùng được; đồ trang trí có câu chuyện gần như không ai mua.</p>
+        <div class="bars" role="img" aria-label="Biểu đồ lượt bán: bếp xông thảo mộc 70 nghìn đồng 39.500 lượt; bộ nồi đất 35 nghìn 216 lượt; bếp nướng 49 nghìn 140 lượt; chén đổ bánh xèo 129 nghìn 31 lượt; bình hoa 272 nghìn 17 lượt; bình gốm 273 nghìn 4 lượt; tượng chú tiểu 190 nghìn 1 lượt">
+          <div class="bar"><span class="lbl">Bếp xông thảo mộc · 70k</span><span class="track"><i data-w="100"></i></span><span class="val">39.500</span></div>
+          <div class="bar"><span class="lbl">Bộ nồi đất mini · 35k</span><span class="track"><i data-w="2"></i></span><span class="val">216</span></div>
+          <div class="bar"><span class="lbl">Bếp nướng than · 49k</span><span class="track"><i data-w="1.4"></i></span><span class="val">140</span></div>
+          <div class="bar"><span class="lbl">Chén đổ bánh xèo · 129k</span><span class="track"><i data-w="0.6"></i></span><span class="val">31</span></div>
+          <div class="bar"><span class="lbl">Bình hoa thủ công · 272k</span><span class="track"><i data-w="0.4"></i></span><span class="val">17</span></div>
+          <div class="bar"><span class="lbl">Bình gốm · 273k</span><span class="track"><i data-w="0.3"></i></span><span class="val">4</span></div>
+          <div class="bar"><span class="lbl">Tượng chú tiểu · 190k</span><span class="track"><i data-w="0.2"></i></span><span class="val">1</span></div>
+        </div>
+        <p class="src">Lượt bán hiển thị trên từng tin đăng tại thời điểm khảo sát. Thang biểu đồ phóng to các cột nhỏ để dễ đọc.</p>
+      </div>
+
+      <div class="causes">
+        <article class="cause reveal"><h3>Không có lý do để chọn</h3><p>Hàng giữa các gian na ná nhau, cạnh tranh bằng giá. Người mua không thấy điều gì khiến món này đặc biệt hơn món kia.</p></article>
+        <article class="cause reveal"><h3>Không biết ai làm ra</h3><p>Rất ít tin đăng ghi tên nghệ nhân hay cách nung. Giá trị lớn nhất – nặn tay không bàn xoay, nung lộ thiên bằng rơm, nghề mẹ truyền con gái – không tới được người mua.</p></article>
+        <article class="cause reveal"><h3>Không có mặt nơi người ta chi tiền</h3><p>Điểm bán ở sân bay, khách sạn, khu du lịch vẫn bị chi phối bởi hàng lưu niệm rập khuôn (SGGP, 6/2025). Gốm Chăm gần như vắng mặt ở tiệm hoa, quán cà phê, khách sạn TP.HCM.</p></article>
+        <article class="cause reveal"><h3>Không có gì để kể lại</h3><p>Mua xong là hết. Không có nghi thức mở hộp, không có bộ để sưu tầm, không có video để đăng – nên không ai lan truyền giúp.</p></article>
+      </div>
+
+      <div class="gap reveal">
+        <h3>Khoảng trống chú ý</h3>
+        <div class="gap-row"><span>Video "Labubu unboxing" nổi bật trên TikTok</span><b>51K – 1,3 triệu</b><em>lượt thích</em></div>
+        <div class="gap-row"><span>Video "gốm Bàu Trúc" nổi bật trên TikTok</span><b>58 – 7.093</b><em>lượt thích</em></div>
+        <p class="src">Khảo sát kết quả tìm kiếm TikTok ngày 05/11/2026. Người trẻ có sẵn thói quen mở hộp và sưu tầm; gốm Bàu Trúc chưa có định dạng để bước vào thói quen đó.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TAY ME -->
+  <section id="tay-me" class="section tayme" aria-labelledby="tm-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">02 · Sự thật làm nên concept</p>
+        <h2 id="tm-title" class="reveal">Nghề gốm Bàu Trúc<br><em>mẹ truyền, con gái nối.</em></h2>
+        <p class="reveal">Người Chăm Bà La Môn và Bà Ni theo chế độ mẫu hệ. Ở Bàu Trúc, nghề gốm do phụ nữ làm và được truyền từ mẹ sang con gái. Đó là gốc thật của concept <b>Tay Mẹ</b>: mỗi món gốm là một lời nhớ ơn người sinh ra mình.</p>
+        <p class="src">Nguồn: Báo Pháp luật, "Ở vùng đất nghề mẹ truyền con gái nối"; Tạp chí Công Thương.</p>
+      </div>
+      <ol class="steps reveal" aria-label="Các công đoạn của nghề">
+        <li><b>Gánh đất</b> ven sông Quao</li>
+        <li><b>Nặn đi vòng</b> quanh bệ, không bàn xoay</li>
+        <li><b>Vuốt láng</b> bằng vỏ sò</li>
+        <li><b>Đội gốm</b> đi phơi</li>
+        <li><b>Nung lộ thiên</b> bằng rơm, củi</li>
+        <li><b>Dạy con</b> gái giữ nghề</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- FEVER -->
+  <section id="con-sot" class="section fever" aria-labelledby="fv-title">
+    <div class="wrap">
+      <p class="eyebrow">03 · Cơn sốt đã có sẵn</p>
+      <h2 id="fv-title" class="reveal">Người trẻ đã quen mở hộp, sưu tầm và quay video.<br>Chúng tôi đưa di sản vào đúng thói quen đó.</h2>
+      <div class="models">
+        <article class="model reveal"><h3>Pop Mart · Labubu</h3><p>Nhân vật có tên, series có món hiếm. Hành động mở hộp trở thành nội dung người mua tự đăng.</p></article>
+        <article class="model reveal"><h3>Bảo tàng Hà Nam · Hộp khảo cổ</h3><p>Cổ vật thu nhỏ nằm trong khối đất, người mua tự đào bằng xẻng mini. Biến bảo tàng thành trải nghiệm tại nhà.</p></article>
+        <article class="model reveal"><h3>Cố Cung · Sáng tạo văn hoá</h3><p>Bảo tàng giữ IP và câu chuyện, đối tác sản xuất và phân phối.</p></article>
+        <article class="model reveal"><h3>Matryoshka · Kokeshi</h3><p>Một dáng biểu tượng nhận ra ngay, nhiều phiên bản. Thủ công truyền thống sống nhờ du khách và người sưu tầm.</p></article>
+        <article class="model reveal"><h3>MoMo · Lắc Xì</h3><p>Hẹn đều đặn theo mùa Tết, ai cũng chờ. Mỗi mẻ nung của chúng tôi là một lần hẹn.</p></article>
+        <article class="model reveal"><h3>Đế Đô Khảo Cổ Ký</h3><p>Hộp đào cổ vật của Việt Nam đã có người mua và người quay video – nhu cầu "đào để khám phá" là có thật.</p></article>
+      </div>
+      <h3 class="sub reveal">Xem cơn sốt trên TikTok</h3>
+      <div class="tiktoks" id="tiktoks">
+        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vanessa.h.lopez/video/7497673178571869482" data-video-id="7497673178571869482"><section><a href="https://www.tiktok.com/@vanessa.h.lopez/video/7497673178571869482" target="_blank" rel="noopener">Mở cả bộ Labubu, săn món bí mật</a></section></blockquote><figcaption>Mở cả series Labubu săn món hiếm · khoảng 1,3 triệu lượt thích</figcaption></figure>
+        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dungdaovexau/video/7396539714561412369" data-video-id="7396539714561412369"><section><a href="https://www.tiktok.com/@dungdaovexau/video/7396539714561412369" target="_blank" rel="noopener">Test nhân phẩm unbox Labubu</a></section></blockquote><figcaption>Người trẻ Việt "test nhân phẩm" mở hộp · khoảng 211 nghìn lượt thích</figcaption></figure>
+        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@khaocoky/video/7456378058652585237" data-video-id="7456378058652585237"><section><a href="https://www.tiktok.com/@khaocoky/video/7456378058652585237" target="_blank" rel="noopener">Đoán cổ vật – hộp đào</a></section></blockquote><figcaption>Hộp đào cổ vật Việt Nam · gần 6 nghìn lượt thích</figcaption></figure>
+        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tanmancunghung24/video/7695241521687170322" data-video-id="7695241521687170322"><section><a href="https://www.tiktok.com/@tanmancunghung24/video/7695241521687170322" target="_blank" rel="noopener">Gốm Bàu Trúc: bí mật từ đôi bàn tay người phụ nữ Chăm</a></section></blockquote><figcaption>Câu chuyện "đôi bàn tay người phụ nữ Chăm" · hơn 4 nghìn lượt thích</figcaption></figure>
+      </div>
+      <p class="src">Video thuộc về tác giả trên TikTok, nhúng để minh hoạ xu hướng. Số lượt thích ghi nhận ngày 05/11/2026.</p>
+    </div>
+  </section>
+
+  <!-- ME LANG -->
+  <section id="me-lang" class="section melang" aria-labelledby="ml-title">
+    <div class="wrap">
+      <p class="eyebrow">04 · Tầng 1 – Tạo tiếng vang</p>
+      <h2 id="ml-title" class="reveal">Series nhân vật <em>Mẹ Làng</em></h2>
+      <p class="reveal narrow">6 nhân vật, mỗi nhân vật là một công đoạn thật của nghề, và 1 nhân vật hiếm. Tượng nặn tay, nung lộ thiên, nên mỗi mẻ có màu khói riêng và được đánh số. Sưu tầm đủ bộ là sưu tầm đủ các bước của nghề.</p>
+      <div class="chars" id="chars"></div>
+      <div class="lineup">
+        <article class="prod reveal"><h3>Hộp Đào Đất</h3><p>Tượng nằm trong khối cát nén, kèm que tre và cọ. Mở hộp là một lần khai quật. Kèm thẻ ảnh nghệ nhân thật.</p><span>Đề xuất 99–129k</span></article>
+        <article class="prod reveal"><h3>Hơi Đất</h3><p>Đá gốm không men hút tinh dầu và toả hương từ từ. Treo xe, móc túi, đặt bàn học. Có sẵn, giao ngay.</p><span>Đề xuất 39–59k</span></article>
+        <article class="prod reveal"><h3>Ba Thế Hệ mini</h3><p>Ba bình cùng một dáng lu: Bà – Mẹ – Con. Cắm hoa trên bàn học, bàn làm việc; đứng cạnh nhau là một gia đình.</p><span>Đề xuất từ 99k</span></article>
+      </div>
+      <p class="src">Hình là phác thảo ý tưởng. Thiết kế cuối cùng làm cùng nghệ nhân và được cộng đồng duyệt; không dùng biểu tượng tôn giáo.</p>
+    </div>
+  </section>
+
+  <!-- DIG -->
+  <section id="dao-dat" class="section dig" aria-labelledby="dg-title">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">05 · Thử trải nghiệm</p>
+        <h2 id="dg-title" class="reveal">Đào thử một Hộp Đào Đất</h2>
+        <p class="reveal">Rê chuột hoặc vuốt ngón tay lên khối cát để khai quật. Bạn không biết trước mình sẽ gặp mẹ nào. Có 1 nhân vật hiếm.</p>
+        <p id="digResult" class="dig-result" aria-live="polite">Khối cát đang chờ bạn.</p>
+        <button id="digAgain" class="btn ghost" type="button">Đào hộp khác</button>
+        <p class="src">Bản mô phỏng trên web. Hộp thật dùng cát nén, que tre và cọ.</p>
+      </div>
+      <div class="dig-box">
+        <div class="dig-frame">
+          <div id="digReveal" class="dig-reveal"></div>
+          <canvas id="digCanvas" aria-label="Khối cát: rê chuột hoặc vuốt để đào" role="img"></canvas>
+        </div>
+        <div class="dig-tools" aria-hidden="true"><span>que tre</span><span>cọ</span><span>thẻ nghệ nhân</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY PAGE -->
+  <section id="cau-chuyen" class="section story" aria-labelledby="st-title">
+    <div class="wrap split">
+      <div class="phone" aria-label="Mô phỏng trang câu chuyện số trên điện thoại">
+        <div class="phone-screen">
+          <p class="ph-eyebrow">Mẻ 001 · Thẻ 03/12</p>
+          <div class="ph-portrait" aria-hidden="true"><span>[Ảnh nghệ nhân]</span></div>
+          <h3>Mẹ Làng · Vuốt vỏ sò</h3>
+          <p>Nặn tay tại Bàu Trúc, nung lộ thiên bằng rơm. Nghệ nhân học nghề từ mẹ.</p>
+          <button id="recBtn" class="btn primary small" type="button">Ghi âm Lời gửi mẹ</button>
+          <audio id="recAudio" controls hidden></audio>
+          <p id="recStatus" class="rec-status" aria-live="polite">Bản demo: âm thanh chỉ nằm trên máy bạn.</p>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">06 · Công nghệ đúng chỗ</p>
+        <h2 id="st-title" class="reveal">Trang câu chuyện số<br>và <em>Lời gửi mẹ</em></h2>
+        <p class="reveal">Mỗi thẻ trong hộp có một mã. Quét mã là mở trang của nghệ nhân và mẻ nung: video chân dung, ảnh mẻ, các công đoạn, song ngữ cho du khách. Người tặng quà có thể ghi âm một lời nhắn gắn vào thẻ; người nhận quét để nghe.</p>
+        <p class="reveal">Nghệ nhân không phải quay hay chụp gì thêm. Đội quay mỗi nghệ nhân một lần, mỗi mẻ một video chung.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODEL -->
+  <section id="mo-hinh" class="section model-sec" aria-labelledby="mh-title">
+    <div class="wrap">
+      <p class="eyebrow">07 · Mô hình đa tầng</p>
+      <h2 id="mh-title" class="reveal">Tiếng vang trước, hệ sinh thái sau.<br>Mỗi tầng nuôi tầng kế tiếp.</h2>
+      <div class="tiers">
+        <article class="tier t1 reveal"><span class="tnum">Tầng 1</span><h3>Bộ sưu tập cho giới trẻ</h3><p>Mẹ Làng trong Hộp Đào Đất, Hơi Đất, Ba Thế Hệ mini. TikTok Shop, Shopee, pop-up ở trường đại học, sự kiện, phố đi bộ.</p><b>Tạo người biết đến</b></article>
+        <article class="tier t2 reveal"><span class="tnum">Tầng 2</span><h3>Hệ sinh thái collab</h3><p>Tiệm hoa, shop cây và kokedama, quán cà phê, homestay, khách sạn bán kèm và tổ chức workshop tại điểm của họ.</p><b>Tạo điểm bán và trải nghiệm</b></article>
+        <article class="tier t3 reveal"><span class="tnum">Tầng 3</span><h3>Mở rộng</h3><p>Quà doanh nghiệp theo mùa, vật phẩm cho không gian sống, cấp phép thiết kế, tour về làng qua đơn vị lữ hành.</p><b>Tạo đơn lớn, biên cao</b></article>
+      </div>
+      <div class="flywheel reveal" aria-label="Vòng hiệu ứng: thấy nhân vật, mở hộp và đăng video, sưu tầm đủ bộ, tặng kèm lời nhắn, gặp lại ở điểm đối tác">
+        <svg viewBox="0 0 600 600" role="img" aria-label="Vòng quay hiệu ứng năm bước">
+          <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B5562F"/></marker></defs>
+          <circle cx="300" cy="300" r="200" fill="none" stroke="#5A4A3F" stroke-width="2" stroke-dasharray="6 8" id="flyRing"/>
+          <g id="flyNodes"></g>
+          <text x="300" y="292" text-anchor="middle" class="fw-center">Tay Mẹ</text>
+          <text x="300" y="320" text-anchor="middle" class="fw-sub">nghệ nhân · người trẻ · đối tác</text>
+        </svg>
+      </div>
+      <div class="revenue reveal">
+        <h3>Nguồn thu</h3>
+        <ul>
+          <li><b>Bán lẻ bộ sưu tập</b> – tầng 1, kéo khách và tạo nội dung</li>
+          <li><b>Bán sỉ và gói collab cho đối tác</b> – lời cốt lõi, đơn đều</li>
+          <li><b>Workshop chia doanh thu</b> – trải nghiệm du lịch tại điểm đối tác</li>
+          <li><b>Quà doanh nghiệp theo mùa</b> – Tết, 8/3, Ngày của Mẹ, Vu Lan, 20/10</li>
+          <li><b>Cấp phép thiết kế, không gian sống</b> – khi IP đủ mạnh</li>
+        </ul>
+        <p>Không sở hữu xưởng: nghệ nhân và hợp tác xã làm gốm theo mẫu, được thanh toán ngay khi giao hàng đạt chuẩn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="lo-trinh" class="section roadmap" aria-labelledby="lt-title">
+    <div class="wrap">
+      <p class="eyebrow">08 · Lộ trình và nhu cầu vốn</p>
+      <h2 id="lt-title" class="reveal">Từ Mẻ 001 đến một mô hình nhân được sang làng nghề khác</h2>
+      <ol class="timeline">
+        <li class="reveal"><span>11–12/2026</span><b>Mẫu thử và Mẻ 001</b><p>Làm mẫu cùng nghệ nhân, phỏng vấn người trẻ và du khách, mở đặt trước Mẻ 001 trước Chung kết 18/12.</p></li>
+        <li class="reveal"><span>Tết 2027</span><b>Ra mắt series Mẹ Làng</b><p>Pop-up ở trường đại học, TikTok Shop; 1–2 tiệm hoa thử bán kèm.</p></li>
+        <li class="reveal"><span>2027</span><b>Mở tầng collab</b><p>Tiệm hoa, shop cây, quán cà phê, khách sạn tại TP.HCM; workshop; lịch mùa tặng quà.</p></li>
+        <li class="reveal"><span>2028</span><b>Nhân rộng</b><p>Quà doanh nghiệp, không gian sống, cấp phép; mang mô hình sang thổ cẩm Mỹ Nghiệp.</p></li>
+      </ol>
+      <div class="funds reveal">
+        <div class="donut-wrap">
+          <svg viewBox="0 0 200 200" class="donut" id="donut" role="img" aria-label="Phân bổ vốn: 30 phần trăm sản phẩm và IP, 25 phần trăm vốn lưu động mẻ nung và bao bì, 25 phần trăm tăng trưởng và nội dung, 12 phần trăm nhân sự vận hành tại làng, 8 phần trăm công nghệ và pháp lý"></svg>
+          <div class="donut-label"><b>100.000</b><span>USD · vòng tiền hạt giống, 18 tháng</span></div>
+        </div>
+        <ul class="legend" id="legend"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section id="doi" class="section team" aria-labelledby="tm2-title">
+    <div class="wrap">
+      <p class="eyebrow">09 · Đội ngũ</p>
+      <h2 id="tm2-title" class="reveal">7 người, một làng nghề</h2>
+      <div class="people">
+        <div class="person reveal"><b>Hà Phương Quỳnh</b><span>Founder · CEO/CTO</span></div>
+        <div class="person reveal"><b>Hải Nữ Mộng Bình</b><span>Đồng sáng lập · Văn hoá &amp; thị trường</span></div>
+        <div class="person reveal"><b>Trần Hoàng Phúc</b><span>Nhân sự</span></div>
+        <div class="person reveal"><b>Bùi Mai Hân</b><span>Tài chính</span></div>
+        <div class="person reveal"><b>Hà Huỳnh Đức Thịnh</b><span>Tài chính · Dòng tiền</span></div>
+        <div class="person reveal"><b>Lê Hồ Bảo Phương</b><span>Thiết kế</span></div>
+        <div class="person reveal"><b>Đặng Thái Bình</b><span>Truyền thông – Thiết kế</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><b>Dấu Đất</b> · Dự án dự thi HIST 2026 – Cuộc thi Khởi nghiệp Đổi mới sáng tạo Du lịch TP.HCM. Trang mô phỏng giải pháp, không phải cửa hàng.</p>
+    <details>
+      <summary>Nguồn tham khảo</summary>
+      <ul>
+        <li><a href="https://www.vietnamplus.vn/tao-suc-song-ben-vung-cho-di-san-gom-cham-bau-truc-post1143025.vnp" target="_blank" rel="noopener">VietnamPlus – Tạo sức sống bền vững cho di sản gốm Chăm Bàu Trúc (20/10/2026)</a></li>
+        <li><a href="https://ich.unesco.org/en/decisions/17.COM/7.A.3" target="_blank" rel="noopener">UNESCO – Quyết định 17.COM 7.A.3</a></li>
+        <li><a href="https://baophapluat.vn/o-vung-dat-nghe-me-truyen-con-gai-noi-post312120.html" target="_blank" rel="noopener">Báo Pháp luật – Ở vùng đất nghề mẹ truyền con gái nối</a></li>
+        <li><a href="https://www.sggp.org.vn/do-mat-tim-san-pham-du-lich-thuong-hieu-quoc-gia-post797755.html" target="_blank" rel="noopener">SGGP – Đỏ mắt tìm sản phẩm du lịch thương hiệu quốc gia (6/2025)</a></li>
+        <li><a href="https://news.cgtn.com/news/2020-12-09/Henan-Museum-s-blind-boxes-provide-treasure-digging-experience-W4J8oR9VHG/index.html" target="_blank" rel="noopener">CGTN – Hộp khảo cổ của Bảo tàng Hà Nam</a></li>
+        <li><a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2022.946337/full" target="_blank" rel="noopener">Frontiers – Nghiên cứu về hộp mù và hành vi mua</a></li>
+        <li><a href="https://e.vnexpress.net/news/life/trend/labubu-baby-three-bubble-bursts-leaving-many-collectors-with-regret-5003889.html" target="_blank" rel="noopener">VnExpress International – Bong bóng Labubu, Baby Three</a></li>
+      </ul>
+    </details>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="app.js"></script>
+<script type="module" src="vase.js"></script>
+</body>
+</html>
