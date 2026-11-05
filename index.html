@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,600;1,500;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="importmap">
-{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js" } }
+{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/" } }
 </script>
 </head>
 <body>
@@ -45,10 +45,11 @@
       </div>
     </div>
     <div class="hero-stage">
-      <div id="vase3d" role="img" aria-label="Mô hình 3D chiếc lu gốm Bàu Trúc đang xoay"></div>
+      <div id="vase3d" data-model="" role="img" aria-label="Mô hình 3D bình gốm Bàu Trúc cổ cao, dựng theo ảnh gốm thật"></div>
       <div class="gesture">
         <button id="gestureBtn" class="chip" type="button">Bật camera: xoè tay để xoay bình, nắm tay để nung</button>
         <p id="gestureStatus" class="gesture-status" aria-live="polite">Kéo chuột hoặc vuốt để xoay. Camera chỉ xử lý trên máy bạn.</p>
+        <p class="vase-credit">Dáng bình và hoa văn dựng theo <a href="https://commons.wikimedia.org/wiki/File:G%E1%BB%91m_B%C3%A0u_Tr%C3%BAc.JPG" target="_blank" rel="noopener">ảnh gốm Bàu Trúc thật</a> · Liftold, CC BY-SA 3.0</p>
         <video id="cam" playsinline muted aria-hidden="true"></video>
       </div>
     </div>
@@ -132,14 +133,24 @@
         <article class="model reveal"><h3>MoMo · Lắc Xì</h3><p>Hẹn đều đặn theo mùa Tết, ai cũng chờ. Mỗi mẻ nung của chúng tôi là một lần hẹn.</p></article>
         <article class="model reveal"><h3>Đế Đô Khảo Cổ Ký</h3><p>Hộp đào cổ vật của Việt Nam đã có người mua và người quay video – nhu cầu "đào để khám phá" là có thật.</p></article>
       </div>
-      <h3 class="sub reveal">Xem cơn sốt trên TikTok</h3>
-      <div class="tiktoks" id="tiktoks">
-        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vanessa.h.lopez/video/7497673178571869482" data-video-id="7497673178571869482"><section><a href="https://www.tiktok.com/@vanessa.h.lopez/video/7497673178571869482" target="_blank" rel="noopener">Mở cả bộ Labubu, săn món bí mật</a></section></blockquote><figcaption>Mở cả series Labubu săn món hiếm · khoảng 1,3 triệu lượt thích</figcaption></figure>
-        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dungdaovexau/video/7396539714561412369" data-video-id="7396539714561412369"><section><a href="https://www.tiktok.com/@dungdaovexau/video/7396539714561412369" target="_blank" rel="noopener">Test nhân phẩm unbox Labubu</a></section></blockquote><figcaption>Người trẻ Việt "test nhân phẩm" mở hộp · khoảng 211 nghìn lượt thích</figcaption></figure>
-        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@khaocoky/video/7456378058652585237" data-video-id="7456378058652585237"><section><a href="https://www.tiktok.com/@khaocoky/video/7456378058652585237" target="_blank" rel="noopener">Đoán cổ vật – hộp đào</a></section></blockquote><figcaption>Hộp đào cổ vật Việt Nam · gần 6 nghìn lượt thích</figcaption></figure>
-        <figure class="tt"><blockquote class="tiktok-embed" cite="https://www.tiktok.com/@tanmancunghung24/video/7695241521687170322" data-video-id="7695241521687170322"><section><a href="https://www.tiktok.com/@tanmancunghung24/video/7695241521687170322" target="_blank" rel="noopener">Gốm Bàu Trúc: bí mật từ đôi bàn tay người phụ nữ Chăm</a></section></blockquote><figcaption>Câu chuyện "đôi bàn tay người phụ nữ Chăm" · hơn 4 nghìn lượt thích</figcaption></figure>
+      <h3 class="sub reveal">Dữ liệu thị trường: tiền và sự chú ý đã có sẵn</h3>
+      <div class="trend reveal">
+        <div class="trend-head"><span class="live"><i></i>Trực tiếp</span><b>Google Trends · Việt Nam · 12 tháng qua</b></div>
+        <div id="trendsWidget" class="trend-body"><p class="trend-fallback">Đang tải biểu đồ trực tiếp… <a href="https://trends.google.com/trends/explore?geo=VN&amp;q=labubu,blind%20box,g%E1%BB%91m%20b%C3%A0u%20tr%C3%BAc" target="_blank" rel="noopener">Mở trên Google Trends</a></p></div>
+        <p class="src">Mức độ tìm kiếm tương đối của "labubu", "blind box" và "gốm bàu trúc" tại Việt Nam. Biểu đồ lấy dữ liệu trực tiếp từ Google mỗi lần mở trang.</p>
       </div>
-      <p class="src">Video thuộc về tác giả trên TikTok, nhúng để minh hoạ xu hướng. Số lượt thích ghi nhận ngày 05/11/2026.</p>
+      <div class="kpis">
+        <article class="kpi reveal"><b>291,6 nghìn tỷ đồng</b><span>Doanh số 4 sàn TMĐT 6 tháng đầu 2026, tăng 44,11%</span><em>Metric · 29/07/2026</em></article>
+        <article class="kpi reveal"><b>41,31%</b><span>Thị phần TikTok Shop năm 2025, từ 29% năm 2024. Video ngắn đã là nơi bán hàng.</span><em>Metric qua VCCI · 19/01/2026</em></article>
+        <article class="kpi hl reveal"><b>2,79% → 34,2%</b><span>Shop Mall chỉ là 2,79% số gian hàng nhưng mang về 34,2% doanh số. Người mua trả tiền cho nơi họ tin.</span><em>Metric · 6 tháng đầu 2026</em></article>
+        <article class="kpi reveal"><b>56,66 nghìn tỷ đồng</b><span>Ngành Nhà cửa &amp; Đời sống trên sàn năm 2025, tăng 34,59%</span><em>Metric qua VCCI · 19/01/2026</em></article>
+        <article class="kpi reveal"><b>~150 tỷ đồng</b><span>Doanh số đồ chơi blind box trên các sàn TMĐT năm 2024</span><em>Metric qua VnEconomy · 31/03/2025</em></article>
+        <article class="kpi reveal"><b>293.000</b><span>Sản phẩm Labubu và Baby Three bán ra trong 6 tháng cuối 2024, chỉ tính top 30 shop Shopee và TikTok Shop</span><em>YouNet ECI · 02/2025</em></article>
+        <article class="kpi reveal"><b>3,12 triệu</b><span>Lượt thảo luận về Labubu trên mạng xã hội Việt Nam trong 6 tháng cuối 2024, với 1,5 triệu người tham gia</span><em>YouNet Media · 02/2025</em></article>
+        <article class="kpi hl reveal"><b>3–4 tháng</b><span>Thời gian đỉnh chú ý của một sản phẩm trend. Vì vậy Dấu Đất ra mắt theo mẻ nung và mùa tặng quà, không sống nhờ một cơn sốt.</span><em>YouNet ECI · 02/2025</em></article>
+      </div>
+      <p class="takeaway reveal"><b>Đọc dữ liệu:</b> tiền và sự chú ý đã dồn vào TMĐT và video ngắn; người mua chọn nơi họ tin; mỗi cơn sốt chỉ kéo dài vài tháng. Gốm Bàu Trúc cần một định dạng sưu tầm có bằng chứng thật và lịch ra mắt đều đặn.</p>
+      <p class="src">Số liệu big data sàn TMĐT và social listening trích từ báo cáo công khai của Metric và YouNet; xem mục Nguồn tham khảo cuối trang.</p>
     </div>
   </section>
 
@@ -165,8 +176,12 @@
       <div>
         <p class="eyebrow">05 · Thử trải nghiệm</p>
         <h2 id="dg-title" class="reveal">Đào thử một Hộp Đào Đất</h2>
-        <p class="reveal">Rê chuột hoặc vuốt ngón tay lên khối cát để khai quật. Bạn không biết trước mình sẽ gặp mẹ nào. Có 1 nhân vật hiếm.</p>
+        <p class="reveal">Rê chuột hoặc vuốt ngón tay lên khối cát để khai quật. Bạn không biết trước mình sẽ gặp mẹ nào. Có 1 nhân vật hiếm. Đào xong bạn nhận một thẻ sưu tầm có mã riêng.</p>
         <p id="digResult" class="dig-result" aria-live="polite">Khối cát đang chờ bạn.</p>
+        <div id="digCard" class="mini-card" hidden>
+          <div id="digQR" class="mc-qr" aria-hidden="true"></div>
+          <div class="mc-body"><p class="mc-eyebrow">Thẻ sưu tầm · Mẻ 001</p><b id="digCardName"></b><span id="digCardNo"></span><a id="digCardLink" class="btn primary small" href="the" target="_blank" rel="noopener">Quét thẻ: mở trang</a></div>
+        </div>
         <button id="digAgain" class="btn ghost" type="button">Đào hộp khác</button>
         <p class="src">Bản mô phỏng trên web. Hộp thật dùng cát nén, que tre và cọ.</p>
       </div>
@@ -180,25 +195,23 @@
     </div>
   </section>
 
-  <!-- STORY PAGE -->
-  <section id="cau-chuyen" class="section story" aria-labelledby="st-title">
+  <!-- CARD PAGE -->
+  <section id="the-suu-tam" class="section story" aria-labelledby="st-title">
     <div class="wrap split">
-      <div class="phone" aria-label="Mô phỏng trang câu chuyện số trên điện thoại">
-        <div class="phone-screen">
-          <p class="ph-eyebrow">Mẻ 001 · Thẻ 03/12</p>
-          <div class="ph-portrait" aria-hidden="true"><span>[Ảnh nghệ nhân]</span></div>
-          <h3>Mẹ Làng · Vuốt vỏ sò</h3>
-          <p>Nặn tay tại Bàu Trúc, nung lộ thiên bằng rơm. Nghệ nhân học nghề từ mẹ.</p>
-          <button id="recBtn" class="btn primary small" type="button">Ghi âm Lời gửi mẹ</button>
-          <audio id="recAudio" controls hidden></audio>
-          <p id="recStatus" class="rec-status" aria-live="polite">Bản demo: âm thanh chỉ nằm trên máy bạn.</p>
-        </div>
+      <div class="phone" aria-label="Trang thẻ sưu tầm hiển thị trên điện thoại">
+        <div class="phone-screen frame"><iframe id="cardFrame" src="the?m=001&amp;c=vuot&amp;s=3&amp;embed=1" title="Trang thẻ sưu tầm mẫu" loading="lazy"></iframe></div>
       </div>
       <div>
-        <p class="eyebrow">06 · Công nghệ đúng chỗ</p>
-        <h2 id="st-title" class="reveal">Trang câu chuyện số<br>và <em>Lời gửi mẹ</em></h2>
-        <p class="reveal">Mỗi thẻ trong hộp có một mã. Quét mã là mở trang của nghệ nhân và mẻ nung: video chân dung, ảnh mẻ, các công đoạn, song ngữ cho du khách. Người tặng quà có thể ghi âm một lời nhắn gắn vào thẻ; người nhận quét để nghe.</p>
-        <p class="reveal">Nghệ nhân không phải quay hay chụp gì thêm. Đội quay mỗi nghệ nhân một lần, mỗi mẻ một video chung.</p>
+        <p class="eyebrow">06 · Thẻ sưu tầm</p>
+        <h2 id="st-title" class="reveal">Quét thẻ, gặp đúng <em>người mẹ</em><br>đã nặn ra nhân vật của bạn</h2>
+        <p class="reveal">Mỗi hộp có một thẻ in ảnh nghệ nhân và một mã riêng. Quét mã là mở trang của chính bản tượng đó: nhân vật bạn đào trúng, công đoạn nó kể, nghệ nhân đã nặn và mẻ nung đã đưa nó ra lò. Mỗi bản mang số thứ tự trong mẻ và vân khói riêng, nên không bản nào giống bản nào.</p>
+        <ul class="feat reveal">
+          <li><b>Độc bản có số</b> – ví dụ bản 03/12 của Mẻ 001, kèm mã kiểm tra bản thật</li>
+          <li><b>Bộ sưu tập</b> – đánh dấu mẹ đã có, thấy còn thiếu mẹ nào</li>
+          <li><b>Song ngữ Việt – Anh</b> – du khách quốc tế đọc được câu chuyện</li>
+        </ul>
+        <p class="reveal">Mọi thẻ dùng chung một trang mẫu. Ra mẻ mới chỉ thêm một tệp dữ liệu nhỏ, nên đi từ 100 lên 100.000 thẻ không phải xây thêm hệ thống, không phải lưu âm thanh hay video của từng người mua.</p>
+        <p class="src">Khung bên cạnh là trang thật đang chạy. Đào một hộp ở phần 05 để đổi sang thẻ bạn vừa nhận.</p>
       </div>
     </div>
   </section>
@@ -288,6 +301,12 @@
         <li><a href="https://news.cgtn.com/news/2020-12-09/Henan-Museum-s-blind-boxes-provide-treasure-digging-experience-W4J8oR9VHG/index.html" target="_blank" rel="noopener">CGTN – Hộp khảo cổ của Bảo tàng Hà Nam</a></li>
         <li><a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2022.946337/full" target="_blank" rel="noopener">Frontiers – Nghiên cứu về hộp mù và hành vi mua</a></li>
         <li><a href="https://e.vnexpress.net/news/life/trend/labubu-baby-three-bubble-bursts-leaving-many-collectors-with-regret-5003889.html" target="_blank" rel="noopener">VnExpress International – Bong bóng Labubu, Baby Three</a></li>
+        <li><a href="https://metric.vn/resource/blog/metric-bao-cao-thuong-mai-dien-tu-viet-nam-6-thang-dau-nam-2026" target="_blank" rel="noopener">Metric – Báo cáo TMĐT Việt Nam 6 tháng đầu năm 2026</a></li>
+        <li><a href="https://en.vcci.com.vn/vcci-news/online-retail-sales-in-vietnam-jump-35-to-over-16-bln-in-2025-report-114817" target="_blank" rel="noopener">VCCI – Online retail sales in Vietnam jump 35% in 2025 (Metric)</a></li>
+        <li><a href="https://vneconomy.vn/thi-truong-hop-mu-tiep-tuc-phat-trien-manh-me.htm" target="_blank" rel="noopener">VnEconomy – Thị trường hộp mù tiếp tục phát triển mạnh mẽ (Metric)</a></li>
+        <li><a href="https://thuonggiaonline.vn/labubu-va-baby-three-gay-sot-tren-san-thuong-mai-dien-tu-post557639.html" target="_blank" rel="noopener">Thương gia – Labubu và Baby Three trên sàn TMĐT (YouNet Media, YouNet ECI, Metric)</a></li>
+        <li><a href="https://trends.google.com/trends/explore?geo=VN&amp;q=labubu,blind%20box,g%E1%BB%91m%20b%C3%A0u%20tr%C3%BAc" target="_blank" rel="noopener">Google Trends – labubu, blind box, gốm bàu trúc (Việt Nam)</a></li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:G%E1%BB%91m_B%C3%A0u_Tr%C3%BAc.JPG" target="_blank" rel="noopener">Ảnh gốm Bàu Trúc dùng để dựng mô hình 3D – Liftold, CC BY-SA 3.0, Wikimedia Commons</a></li>
       </ul>
     </details>
   </div>
@@ -295,6 +314,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
+<script src="chars.js"></script>
 <script src="app.js"></script>
 <script type="module" src="vase.js"></script>
 </body>
